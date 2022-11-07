@@ -1,9 +1,11 @@
 import React from "react";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className=" text-center">
-      <h1>Tesla Clone</h1>
+    <div>
+      <Header />
+      {/* Header Block */}
     </div>
   );
 }
