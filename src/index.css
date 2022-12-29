@@ -7,7 +7,7 @@
 @font-face {
   font-family: "Gotham";
   src: local("Gotham"), url("./assets/fonts/Gotham-Font/GothamMedium_1.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: normal;
 }
 
 @tailwind base;

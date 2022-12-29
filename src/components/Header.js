@@ -23,9 +23,9 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
   };
 
   return (
-    <header className=" sticky left-0 top-0 z-10 p-6 pt-5 text-sm">
+    <header className=" sticky left-0 top-0 z-10 p-6 pt-3 text-sm">
       <nav className="flex justify-between items-center">
-        <div>
+        <div className="mr-24">
           <Link to="/">
             <img className=" object-contain w-32 pl-6" src={logoLink} alt="Tesla logo" />
           </Link>
