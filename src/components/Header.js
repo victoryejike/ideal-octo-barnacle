@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MenuItems from "./MenuItems";
 
-const Header = () => {
+const Header = ({ isMenuOpen, setisMenuOpen }) => {
   const navLinks = [
     { name: "Model S", href: "models" },
     { name: "Model 3", href: "model3" },
@@ -17,8 +18,12 @@ const Header = () => {
   const logoLink =
     "https://assets.website-files.com/5e8fceb1c9af5c3915ec97a0/5ec2f037975ed372da9f6286_Tesla-Logo-PNG-HD.png";
 
+  const handleClick = () => {
+    setisMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className=" sticky left-0 top-0 z-10 p-6 pt-4">
+    <header className=" sticky left-0 top-0 z-10 p-6 pt-5 text-sm">
       <nav className="flex justify-between items-center">
         <div>
           <Link to="/">
@@ -27,23 +32,30 @@ const Header = () => {
         </div>
         <div className="flex">
           {navLinks.slice(0, 6).map((nav, i) => (
-            <div key={i} className="mx-3">
+            <div
+              key={i}
+              className="mx-1 px-4 py-1 hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300">
               <Link to={nav.href}>
-                <p>{nav.name}</p>
+                <p className="pt-2">{nav.name}</p>
               </Link>
             </div>
           ))}
         </div>
-        <div className="flex">
+        <div className="flex pr-3">
           {navLinks.slice(6, 8).map((nav, i) => (
-            <div key={i} className="mx-3">
+            <div
+              key={i}
+              className="px-4 py-1 hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300">
               <Link to={nav.href}>
-                <p>{nav.name}</p>
+                <p className="pt-2">{nav.name}</p>
               </Link>
             </div>
           ))}
-          <div className="mx-3 cursor-pointer">
-            <p>Menu</p>
+          <div
+            className=" px-4 py-1 hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300"
+            onClick={handleClick}>
+            <p className="cursor-pointer  pt-2">Menu</p>
+            {isMenuOpen ? <MenuItems isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} /> : ""}
           </div>
         </div>
       </nav>
