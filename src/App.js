@@ -32,20 +32,7 @@ function App() {
             />
           ))} */}
         </div>
-        <SectionBlock
-          title="Model S"
-          subTitle="Schedule a Demo"
-          bgUrl="https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70"
-          actionBtn1="Buy Now"
-          actionBtn2="Custom Order"
-        />
-        <SectionBlock
-          title="Model Y"
-          subTitle="Schedule a Demo"
-          bgUrl="https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70"
-          actionBtn1="Buy Now"
-          actionBtn2="Custom Order"
-        />
+        <SectionBlock />
       </div>
     </Router>
   );
