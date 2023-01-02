@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import { BrowserRouter as Router } from "react-router-dom";
+import HeaderBlock from "./components/HeaderBlock";
 import SectionBlock from "./components/SectionBlock";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             />
           ))} */}
         </div>
+        <HeaderBlock />
         <SectionBlock />
       </div>
     </Router>
