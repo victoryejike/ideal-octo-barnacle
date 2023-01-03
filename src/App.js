@@ -21,18 +21,6 @@ function App() {
     <Router>
       <div>
         <Header isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} />
-        <div>
-          {/* {sectionDescription.map((section, index) => (
-            <SectionBlock
-              key={index}
-              title={section.title}
-              subTitle={section.subTitle}
-              bgUrl={section.bgUrl}
-              actionBtn1={section.firstActionBtn}
-              actionBtn2={section.secondActionBtn}
-            />
-          ))} */}
-        </div>
         <HeaderBlock />
         <SectionBlock />
       </div>

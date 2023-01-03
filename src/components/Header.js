@@ -23,7 +23,7 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
   };
 
   return (
-    <header className=" sticky left-0 top-0 z-10 p-6 pt-3 text-sm">
+    <header className="sticky top-0 left-0 right-0 z-20 p-6 pt-3 text-sm">
       <nav className="flex justify-between items-center">
         <div className="mr-24">
           <Link to="/">
