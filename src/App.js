@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className="relative">
         <Header isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} />
         <HeaderBlock />
         <SectionBlock />
