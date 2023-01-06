@@ -4,6 +4,12 @@ import { GrClose } from "react-icons/gr";
 
 const MenuItems = ({ isMenuOpen, setisMenuOpen }) => {
   const menuLinks = [
+    { name: "Model S", href: "models" },
+    { name: "Model 3", href: "model3" },
+    { name: "Model X", href: "modelx" },
+    { name: "Model Y", href: "modely" },
+    { name: "Solar Roof", href: "solarroof" },
+    { name: "Solar Panels", href: "solarpanels" },
     { name: "Existing Inventory", href: "models" },
     { name: "Used Inventory", href: "model3" },
     { name: "Trade-In", href: "modelx" },
@@ -26,7 +32,7 @@ const MenuItems = ({ isMenuOpen, setisMenuOpen }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-auto bg-[rgba(152,156,159,0.2)] backdrop-blur-sm z-20 rounded transition hover:ease-in-out duration-300">
-      <div className="bg-white w-1/5 ml-auto p-10 pr-8 pt-8 h-full">
+      <div className="bg-white w-5/6 lg:w-1/5 ml-auto p-10 pr-8 pt-8 h-max">
         <div className="mb-8 p-3 ml-auto w-10 rounded hover:bg-[rgb(245,245,245)]">
           <GrClose className=" cursor-pointer " onClick={handleClick} />
         </div>

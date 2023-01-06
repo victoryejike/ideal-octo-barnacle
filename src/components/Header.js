@@ -23,14 +23,14 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-20 p-6 pt-3 text-sm">
+    <header className="fixed top-0 left-0 right-0 z-20 p-2 lg:p-6 pt-3 text-sm">
       <nav className="flex justify-between items-center">
         <div className="mr-24">
           <Link to="/">
-            <img className=" object-contain w-32 pl-6" src={logoLink} alt="Tesla logo" />
+            <img className=" object-contain w-32 pl-2 lg:pl-6" src={logoLink} alt="Tesla logo" />
           </Link>
         </div>
-        <div className="flex">
+        <div className="hidden lg:flex">
           {navLinks.slice(0, 6).map((nav, i) => (
             <div
               key={i}
@@ -41,7 +41,7 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
             </div>
           ))}
         </div>
-        <div className="flex pr-3">
+        <div className="hidden lg:flex pr-3">
           {navLinks.slice(6, 8).map((nav, i) => (
             <div
               key={i}
@@ -57,6 +57,13 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
             <p className="cursor-pointer  pt-2">Menu</p>
             {isMenuOpen ? <MenuItems isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} /> : ""}
           </div>
+        </div>
+        {/* Mobile Nav */}
+        <div
+          className="block lg:hidden px-4 py-1 bg-[rgb(220,217,217)] rounded transition hover:ease-in-out duration-300"
+          onClick={handleClick}>
+          <p className="cursor-pointer  pt-2">Menu</p>
+          {isMenuOpen ? <MenuItems isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} /> : ""}
         </div>
       </nav>
     </header>

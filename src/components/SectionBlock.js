@@ -3,6 +3,14 @@ import React from "react";
 const SectionBlock = () => {
   const sectionDescription = [
     {
+      title: "Model Y",
+      subTitle: "Schedule a Demo Drive",
+      firstActionBtn: "Buy Now",
+      secondActionBtn: "Custom Order",
+      bgUrl:
+        "https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70"
+    },
+    {
       title: "Model 3",
       subTitle: "Schedule a Demo Drive",
       firstActionBtn: "Buy Now",
@@ -52,7 +60,7 @@ const SectionBlock = () => {
     }
   ];
   return (
-    <div className="h-screen -my-[4.6rem]">
+    <div className="h-screen font-normal">
       {sectionDescription.map((section, index) => (
         <div
           key={index}
@@ -61,16 +69,16 @@ const SectionBlock = () => {
             backgroundSize: "cover"
           }}
           className="h-screen grid place-items-center">
-          <div className=" text-center mt-10">
+          <div className=" text-center mt-24 lg:mt-10">
             <h1 className="text-4xl font-normal">{section.title}</h1>
             <p className=" underline cursor-pointer">{section.subTitle}</p>
           </div>
-          <div className="mt-64 flex place-items-center">
-            <button className="px-20 py-1 bg-gray-800 text-gray-300 pt-4 rounded ml-20">
+          <div className="mt-64 block lg:flex place-items-center">
+            <button className="px-20 py-1 bg-gray-800 text-gray-300 pt-4 rounded ml-0 lg:ml-20 mb-3">
               {section.firstActionBtn}
             </button>
             {section.secondActionBtn ? (
-              <button className="px-20 py-1 bg-gray-200 text-black pt-4 rounded ml-5">
+              <button className="px-20 py-1 bg-gray-200 text-black pt-4 rounded ml-0 lg:ml-5">
                 {section.secondActionBtn}
               </button>
             ) : (
