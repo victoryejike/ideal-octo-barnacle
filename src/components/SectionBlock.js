@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const SectionBlock = () => {
   const sectionDescription = [
@@ -74,16 +75,8 @@ const SectionBlock = () => {
             <p className=" underline cursor-pointer">{section.subTitle}</p>
           </div>
           <div className="mt-64 block lg:flex place-items-center">
-            <button className="px-20 py-1 bg-gray-800 text-gray-300 pt-4 rounded ml-0 lg:ml-20 mb-3">
-              {section.firstActionBtn}
-            </button>
-            {section.secondActionBtn ? (
-              <button className="px-20 py-1 bg-gray-200 text-black pt-4 rounded ml-0 lg:ml-5">
-                {section.secondActionBtn}
-              </button>
-            ) : (
-              ""
-            )}
+            <Button text={section.firstActionBtn} secondBtn={false} />
+            {section.secondActionBtn && <Button text={section.secondActionBtn} secondBtn={true} />}
           </div>
         </div>
       ))}
