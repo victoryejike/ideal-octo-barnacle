@@ -3,8 +3,10 @@ import React from "react";
 const Button = ({ text, secondBtn }) => {
   return (
     <button
-      className={`px-20 py-1  pt-4 rounded ml-0 lg:ml-20 mb-3 w-72 ${
-        secondBtn ? "bg-[#f0edea] text-[#393C41]" : "bg-[#1E2026] text-white"
+      className={`px-20 pt-3 pb-1 rounded mb-3 w-72 ${
+        secondBtn
+          ? "bg-[#f0edea] text-[#393C41] ml-0 lg:ml-5"
+          : "bg-[#3F4043] text-white place-items-center"
       }`}>
       {text}
     </button>

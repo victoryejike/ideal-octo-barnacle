@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GrClose } from "react-icons/gr";
 
@@ -30,6 +30,15 @@ const MenuItems = ({ isMenuOpen, setisMenuOpen }) => {
     setisMenuOpen(!isMenuOpen);
   };
 
+  const [width, setWidth] = useState(window.innerWidth);
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-auto bg-[rgba(152,156,159,0.2)] backdrop-blur-sm z-20 rounded transition hover:ease-in-out duration-300">
       <div className="bg-white w-5/6 lg:w-1/5 ml-auto p-10 pr-8 pt-8 h-max">
@@ -37,15 +46,25 @@ const MenuItems = ({ isMenuOpen, setisMenuOpen }) => {
           <GrClose className=" cursor-pointer " onClick={handleClick} />
         </div>
 
-        {menuLinks.map((menuLink, i) => (
-          <div
-            key={i}
-            className="p-2 font-light flex justify-start items-center text-sm tracking-wider hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300">
-            <Link to={menuLink.href}>
-              <p className="pt-2">{menuLink.name}</p>
-            </Link>
-          </div>
-        ))}
+        {width >= 1440
+          ? menuLinks.slice(6).map((menuLink, i) => (
+              <div
+                key={i}
+                className="p-2 font-light flex justify-start items-center text-sm tracking-wider hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300">
+                <Link to={menuLink.href}>
+                  <p className="pt-2">{menuLink.name}</p>
+                </Link>
+              </div>
+            ))
+          : menuLinks.map((menuLink, i) => (
+              <div
+                key={i}
+                className="p-2 font-light flex justify-start items-center text-sm tracking-wider hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300">
+                <Link to={menuLink.href}>
+                  <p className="pt-2">{menuLink.name}</p>
+                </Link>
+              </div>
+            ))}
       </div>
     </div>
   );

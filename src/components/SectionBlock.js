@@ -6,6 +6,7 @@ const SectionBlock = () => {
     {
       title: "Model Y",
       subTitle: "Schedule a Demo Drive",
+      underline: true,
       firstActionBtn: "Buy Now",
       secondActionBtn: "Custom Order",
       bgUrl:
@@ -14,6 +15,7 @@ const SectionBlock = () => {
     {
       title: "Model 3",
       subTitle: "Schedule a Demo Drive",
+      underline: true,
       firstActionBtn: "Buy Now",
       secondActionBtn: "Custom Order",
       bgUrl:
@@ -22,6 +24,7 @@ const SectionBlock = () => {
     {
       title: "Model S",
       subTitle: "Schedule a Demo Drive",
+      underline: true,
       firstActionBtn: "Buy Now",
       secondActionBtn: "Custom Order",
       bgUrl:
@@ -30,6 +33,7 @@ const SectionBlock = () => {
     {
       title: "Model X",
       subTitle: "Schedule a Demo Drive",
+      underline: true,
       firstActionBtn: "Buy Now",
       secondActionBtn: "Custom Order",
       bgUrl:
@@ -38,6 +42,7 @@ const SectionBlock = () => {
     {
       title: "Solar Panels",
       subTitle: "Lowest Cost Solar Panels in America",
+      underline: false,
       firstActionBtn: "Order Now",
       secondActionBtn: "Learn More",
       bgUrl:
@@ -46,6 +51,7 @@ const SectionBlock = () => {
     {
       title: "Solar Roof",
       subTitle: "Produce Clean Energy From Your Roof",
+      underline: false,
       firstActionBtn: "Order Now",
       secondActionBtn: "Learn More",
       bgUrl:
@@ -53,7 +59,6 @@ const SectionBlock = () => {
     },
     {
       title: "Accessories",
-      subTitle: "Produce Clean Energy From Your Roof",
       firstActionBtn: "Shop Now",
       // secondActionBtn: "Learn More",
       bgUrl:
@@ -71,8 +76,13 @@ const SectionBlock = () => {
           }}
           className="h-screen grid place-items-center">
           <div className=" text-center mt-24 lg:mt-10">
-            <h1 className="text-4xl font-normal">{section.title}</h1>
-            <p className=" underline cursor-pointer">{section.subTitle}</p>
+            <h1 className="text-[42px] leading-[45px] font-normal">{section.title}</h1>
+            <p
+              className={`${
+                section.underline ? "underline" : ""
+              }  cursor-pointer text-sm  tracking-wide`}>
+              {section.subTitle}
+            </p>
           </div>
           <div className="mt-64 block lg:flex place-items-center">
             <Button text={section.firstActionBtn} secondBtn={false} />
