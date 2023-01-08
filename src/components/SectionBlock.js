@@ -75,7 +75,7 @@ const SectionBlock = () => {
             backgroundSize: "cover"
           }}
           className="h-screen grid place-items-center">
-          <div className=" text-center mt-24 lg:mt-10">
+          <div className=" text-center mt-14 lg:mt-10">
             <h1 className="text-[42px] leading-[45px] font-normal">{section.title}</h1>
             <p
               className={`${
@@ -84,7 +84,7 @@ const SectionBlock = () => {
               {section.subTitle}
             </p>
           </div>
-          <div className="mt-64 block lg:flex place-items-center">
+          <div className="mt-40 lg:mt-64 flex-col flex lg:flex-row mx-auto">
             <Button text={section.firstActionBtn} secondBtn={false} />
             {section.secondActionBtn && <Button text={section.secondActionBtn} secondBtn={true} />}
           </div>
