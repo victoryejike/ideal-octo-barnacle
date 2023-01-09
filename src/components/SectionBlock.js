@@ -88,11 +88,10 @@ const SectionBlock = () => {
         <div
           key={index}
           style={{
-            background:
-              width > 768
-                ? `url(${section.bgUrl}) no-repeat center`
-                : `url(${section.mobBgUrl}) no-repeat center`,
-            backgroundSize: "cover"
+            backgroundImage: width > 768 ? `url(${section.bgUrl})` : `url(${section.mobBgUrl})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center"
           }}
           className="h-screen grid place-items-center">
           <div className=" text-center mt-14 lg:mt-10">
