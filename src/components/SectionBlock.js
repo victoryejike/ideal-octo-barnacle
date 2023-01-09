@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import { useCustomWidth } from "../utils/useCustomWidth";
+import Footer from "./Footer";
 
 const SectionBlock = () => {
   const [width] = useCustomWidth();
@@ -109,6 +110,7 @@ const SectionBlock = () => {
           </div>
         </div>
       ))}
+      <Footer />
     </div>
   );
 };
