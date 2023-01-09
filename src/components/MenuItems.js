@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { GrClose } from "react-icons/gr";
+import { useCustomWidth } from "../utils/useCustomWidth";
 
 const MenuItems = ({ isMenuOpen, setisMenuOpen }) => {
   const menuLinks = [
@@ -30,14 +31,7 @@ const MenuItems = ({ isMenuOpen, setisMenuOpen }) => {
     setisMenuOpen(!isMenuOpen);
   };
 
-  const [width, setWidth] = useState(window.innerWidth);
-  const updateDimensions = () => {
-    setWidth(window.innerWidth);
-  };
-  useEffect(() => {
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+  const [width] = useCustomWidth();
 
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-auto bg-[rgba(152,156,159,0.2)] backdrop-blur-sm z-20 rounded transition hover:ease-in-out duration-300">
