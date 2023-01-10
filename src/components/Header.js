@@ -23,7 +23,7 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-20 p-2 lg:p-6 pt-3 text-sm">
+    <header className="fixed top-0 left-0 right-0 z-20 p-2 lg:p-6 pt-3 text-sm font-[GothamMedium] font-bold">
       <nav className="flex justify-between items-center">
         <div className="mr-24">
           <Link to="/">

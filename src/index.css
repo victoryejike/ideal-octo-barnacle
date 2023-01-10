@@ -5,9 +5,21 @@
 }
 
 @font-face {
-  font-family: "Gotham";
-  src: local("Gotham"), url("./assets/fonts/Gotham-Font/GothamMedium_1.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "GothamMedium";
+  src: local("Gotham"), url("./assets/fonts/Gotham-Font/GothamBook.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "GothamLight";
+  src: local("Gotham"), url("./assets/fonts/Gotham-Font/Gotham-Light.otf") format("truetype");
+  /* font-weight: bold; */
+}
+
+@font-face {
+  font-family: "GothamBold";
+  src: local("Gotham"), url("./assets/fonts/Gotham-Font/GothamBook.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @tailwind base;
@@ -16,5 +28,5 @@
 
 body {
   margin: 0;
-  font-family: "Gotham", sans-serif;
+  /* font-family: "Gotham", sans-serif; */
 }
