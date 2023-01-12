@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className="flex flex-col lg:flex-row justify-center items-center text-sm py-4 font-[GothamMedium]">
       {width >= 1440
         ? footerLinks.map((link, index) => (
-            <li className="list-none" key={index}>
+            <li className="list-none mx-2" key={index}>
               {link}
             </li>
           ))

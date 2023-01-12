@@ -23,7 +23,7 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-30 p-2 lg:p-6 pt-3 text-sm font-[GothamMedium] font-bold">
+    <header className="fixed top-0 left-0 right-0 z-30 p-2 lg:p-6 pt-3 text-sm font-[iciel] font-bold">
       <nav className="flex justify-between items-center">
         <div className="mr-24">
           <Link to="/">
@@ -36,7 +36,7 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
               key={i}
               className="mx-1 px-4 py-1 hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300">
               <Link to={nav.href}>
-                <p className="pt-2">{nav.name}</p>
+                <p className="">{nav.name}</p>
               </Link>
             </div>
           ))}
@@ -47,14 +47,14 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
               key={i}
               className="px-4 py-1 hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300">
               <Link to={nav.href}>
-                <p className="pt-2">{nav.name}</p>
+                <p className="">{nav.name}</p>
               </Link>
             </div>
           ))}
           <div
             className=" px-4 py-1 hover:bg-[rgb(245,245,245)] rounded transition hover:ease-in-out duration-300"
             onClick={handleClick}>
-            <p className="cursor-pointer  pt-2">Menu</p>
+            <p className="cursor-pointer">Menu</p>
             {isMenuOpen ? <MenuItems isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} /> : ""}
           </div>
         </div>
@@ -62,7 +62,7 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
         <div
           className="block lg:hidden px-4 py-1 bg-[rgb(220,217,217)] rounded transition hover:ease-in-out duration-300"
           onClick={handleClick}>
-          <p className="cursor-pointer  pt-2">Menu</p>
+          <p className="cursor-pointer">Menu</p>
           {isMenuOpen ? <MenuItems isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} /> : ""}
         </div>
       </nav>

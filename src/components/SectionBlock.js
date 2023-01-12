@@ -95,13 +95,11 @@ const SectionBlock = () => {
           }}
           className="h-screen grid place-items-center">
           <div className=" text-center mt-14 lg:mt-10">
-            <h1 className="text-[42px] leading-[45px] font-[GothamBold] font-bold">
-              {section.title}
-            </h1>
+            <h1 className="text-5xl font-[iciel] font-light">{section.title}</h1>
             <p
               className={`${
                 section.underline ? "underline" : ""
-              }  cursor-pointer text-sm  tracking-wide font-[GothamMedium] pt-3 underline-offset-4`}>
+              }  cursor-pointer text-sm  tracking-wide font-[GothamMedium] pt-3 lg:pt-1 underline-offset-4`}>
               {section.subTitle}
             </p>
           </div>

@@ -11,15 +11,16 @@
 }
 
 @font-face {
-  font-family: "GothamLight";
-  src: local("Gotham"), url("./assets/fonts/Gotham-Font/Gotham-Light.otf") format("truetype");
+  font-family: "GothamBook";
+  src: local("Gotham"), url("./assets/fonts/Gotham-Font/GothamMedium.ttf") format("truetype");
   /* font-weight: bold; */
 }
 
 @font-face {
-  font-family: "GothamBold";
-  src: local("Gotham"), url("./assets/fonts/Gotham-Font/GothamBook.ttf") format("truetype");
-  font-weight: bold;
+  font-family: "iciel";
+  src: local("iciel"),
+    url("./assets/fonts/iciel-gotham-cufonfonts/icielgothammediumregular.otf") format("truetype");
+  font-weight: normal;
 }
 
 @tailwind base;
