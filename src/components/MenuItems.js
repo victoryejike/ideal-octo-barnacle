@@ -35,7 +35,7 @@ const MenuItems = ({ isMenuOpen, setisMenuOpen }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-auto bg-[rgba(152,156,159,0.2)] backdrop-blur-sm z-20 rounded transition hover:ease-in-out duration-300">
-      <div className="bg-white w-5/6 lg:w-1/5 ml-auto p-10 pr-8 pt-8 h-max">
+      <div className="bg-white w-5/6 lg:w-1/5 ml-auto p-10 pr-8 pt-8 h-max lg:h-full">
         <div className="mb-8 p-3 ml-auto w-10 rounded hover:bg-[rgb(245,245,245)]">
           <GrClose className=" cursor-pointer " onClick={handleClick} />
         </div>
