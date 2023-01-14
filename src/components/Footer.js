@@ -14,10 +14,10 @@ const Footer = () => {
     "Location"
   ];
   return (
-    <footer className="flex flex-col lg:flex-row justify-center items-center text-sm py-4 font-[GothamMedium]">
+    <footer className="flex flex-col lg:flex-row justify-center items-center text-xs pt-8 font-[GothamMedium]">
       {width >= 1440
         ? footerLinks.map((link, index) => (
-            <li className="list-none mx-2" key={index}>
+            <li className="list-none mx-3" key={index}>
               {link}
             </li>
           ))

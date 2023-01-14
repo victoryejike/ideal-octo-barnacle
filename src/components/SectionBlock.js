@@ -12,6 +12,7 @@ const SectionBlock = () => {
       underline: true,
       firstActionBtn: "Buy Now",
       secondActionBtn: "Custom Order",
+      footer: false,
       mobBgUrl:
         "https://tesla-cdn.thron.com/delivery/public/image/tesla/3304be3b-dd0a-4128-9c26-eb61c0b98d61/bvlatuR/std/0x0/3304be3b-dd0a-4128-9c26-eb61c0b98d61",
       bgUrl:
@@ -23,6 +24,7 @@ const SectionBlock = () => {
       underline: true,
       firstActionBtn: "Buy Now",
       secondActionBtn: "Custom Order",
+      footer: false,
       mobBgUrl:
         "https://tesla-cdn.thron.com/delivery/public/image/tesla/9160c5a3-b818-42dd-bb98-b8597948c636/bvlatuR/std/1927x4096/M3-Homepage-Mobile-LHD",
       bgUrl:
@@ -34,6 +36,7 @@ const SectionBlock = () => {
       underline: true,
       firstActionBtn: "Buy Now",
       secondActionBtn: "Custom Order",
+      footer: false,
       mobBgUrl:
         "https://tesla-cdn.thron.com/delivery/public/image/tesla/093bea90-b72d-494e-a5dd-b9bfec81873a/bvlatuR/std/750x1624/Homepage-Model-S-Mobile-LHD?quality=auto-medium&amp;format=auto",
       bgUrl:
@@ -45,6 +48,7 @@ const SectionBlock = () => {
       underline: true,
       firstActionBtn: "Buy Now",
       secondActionBtn: "Custom Order",
+      footer: false,
       mobBgUrl:
         "https://tesla-cdn.thron.com/delivery/public/image/tesla/43068421-32b9-4b5e-aa48-dc31a499fc90/bvlatuR/std/750x1624/Homepage-Model-X-Mobile-LHD?quality=auto-medium&amp;format=auto",
       bgUrl:
@@ -56,6 +60,7 @@ const SectionBlock = () => {
       underline: false,
       firstActionBtn: "Order Now",
       secondActionBtn: "Learn More",
+      footer: false,
       mobBgUrl:
         "https://tesla-cdn.thron.com/delivery/public/image/tesla/066f19b7-d68e-45e2-8575-ad0a6f8375a8/bvlatuR/std/600x1576/_25-HP-SolarPanels-M",
       bgUrl:
@@ -67,6 +72,7 @@ const SectionBlock = () => {
       underline: false,
       firstActionBtn: "Order Now",
       secondActionBtn: "Learn More",
+      footer: false,
       mobBgUrl:
         "https://tesla-cdn.thron.com/delivery/public/image/tesla/e5c48745-ec05-4488-9585-5b3daf8075ac/bvlatuR/std/750x1624/Homepage-SolarRoof-Mobile-Global?quality=auto-medium&format=auto",
       bgUrl:
@@ -76,6 +82,7 @@ const SectionBlock = () => {
       title: "Accessories",
       firstActionBtn: "Shop Now",
       // secondActionBtn: "Learn More",
+      footer: true,
       mobBgUrl:
         "https://tesla-cdn.thron.com/delivery/public/image/tesla/69095129-86c5-4f6c-a77a-740ceac04e82/bvlatuR/std/0x0/69095129-86c5-4f6c-a77a-740ceac04e82",
       bgUrl:
@@ -93,9 +100,9 @@ const SectionBlock = () => {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center"
           }}
-          className="h-screen grid place-items-center">
-          <div className=" text-center mt-14 lg:mt-10">
-            <h1 className="text-5xl font-[iciel] font-light">{section.title}</h1>
+          className="h-screen grid place-items-center snap-start snap-always">
+          <div className={`${section.footer ? "mt-14 lg:mt-28" : "mt-11 lg:mt-10"} text-center `}>
+            <h1 className="text-4xl font-[GothamBook] font-light">{section.title}</h1>
             <p
               className={`${
                 section.underline ? "underline" : ""
@@ -103,13 +110,16 @@ const SectionBlock = () => {
               {section.subTitle}
             </p>
           </div>
-          <div className="mt-40 lg:mt-64 flex-col flex lg:flex-row mx-auto">
+          <div
+            className={`${
+              section.footer ? "mt-48 lg:mt-96" : "lg:mt-64 mt-40"
+            } flex-col flex lg:flex-row mx-auto`}>
             <Button text={section.firstActionBtn} secondBtn={false} />
             {section.secondActionBtn && <Button text={section.secondActionBtn} secondBtn={true} />}
           </div>
+          {section.footer && <Footer />}
         </div>
       ))}
-      <Footer />
     </div>
   );
 };

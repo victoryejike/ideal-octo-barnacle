@@ -20,7 +20,7 @@
   font-family: "iciel";
   src: local("iciel"),
     url("./assets/fonts/iciel-gotham-cufonfonts/icielgothammediumregular.otf") format("truetype");
-  font-weight: normal;
+  font-weight: light;
 }
 
 @tailwind base;

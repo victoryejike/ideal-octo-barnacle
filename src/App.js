@@ -11,7 +11,9 @@ function App() {
     <Router>
       <div className="relative">
         <Header isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} />
-        <SectionBlock />
+        <div className="snap-y snap-mandatory overflow-auto h-screen">
+          <SectionBlock />
+        </div>
         {/* <Footer /> */}
       </div>
     </Router>
