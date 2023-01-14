@@ -2,31 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { GrClose } from "react-icons/gr";
 import { useCustomWidth } from "../utils/useCustomWidth";
+import { menuLinks } from "../utils/constants";
 
 const MenuItems = ({ isMenuOpen, setisMenuOpen }) => {
-  const menuLinks = [
-    { name: "Model S", href: "models" },
-    { name: "Model 3", href: "model3" },
-    { name: "Model X", href: "modelx" },
-    { name: "Model Y", href: "modely" },
-    { name: "Solar Roof", href: "solarroof" },
-    { name: "Solar Panels", href: "solarpanels" },
-    { name: "Existing Inventory", href: "models" },
-    { name: "Used Inventory", href: "model3" },
-    { name: "Trade-In", href: "modelx" },
-    { name: "Demo Drive", href: "modely" },
-    { name: "Insurance", href: "solarroof" },
-    { name: "Cybertruck", href: "solarpanels" },
-    { name: "Roadster", href: "shop" },
-    { name: "Charging", href: "teslaaccount" },
-    { name: "Powerwall", href: "teslaaccount" },
-    { name: "Commercial Energy", href: "teslaaccount" },
-    { name: "Utilities", href: "teslaaccount" },
-    { name: "Find Us", href: "teslaaccount" },
-    { name: "Support", href: "teslaaccount" },
-    { name: "Investor Relations", href: "teslaaccount" }
-  ];
-
   const handleClick = () => {
     setisMenuOpen(!isMenuOpen);
   };

@@ -1,20 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MenuItems from "./MenuItems";
+import { navLinks } from "../utils/constants";
 
 const Header = ({ isMenuOpen, setisMenuOpen }) => {
-  const navLinks = [
-    { name: "Model S", href: "models" },
-    { name: "Model 3", href: "model3" },
-    { name: "Model X", href: "modelx" },
-    { name: "Model Y", href: "modely" },
-    { name: "Solar Roof", href: "solarroof" },
-    { name: "Solar Panels", href: "solarpanels" },
-    { name: "Shop", href: "shop" },
-    { name: "Account", href: "teslaaccount" },
-    { name: "Menu", href: "" }
-  ];
-
   const logoLink =
     "https://assets.website-files.com/5e8fceb1c9af5c3915ec97a0/5ec2f037975ed372da9f6286_Tesla-Logo-PNG-HD.png";
 
@@ -41,7 +30,7 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
             </div>
           ))}
         </div>
-        <div className="hidden lg:flex pr-3">
+        <div className="hidden xl:flex pr-3">
           {navLinks.slice(6, 8).map((nav, i) => (
             <div
               key={i}
@@ -60,7 +49,7 @@ const Header = ({ isMenuOpen, setisMenuOpen }) => {
         </div>
         {/* Mobile Nav */}
         <div
-          className="block lg:hidden px-4 py-1 bg-[rgb(220,217,217)] rounded transition hover:ease-in-out duration-300"
+          className="block xl:hidden px-4 py-1 bg-[rgb(220,217,217)] rounded transition hover:ease-in-out duration-300"
           onClick={handleClick}>
           <p className="cursor-pointer">Menu</p>
           {isMenuOpen ? <MenuItems isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} /> : ""}

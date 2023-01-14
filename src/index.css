@@ -13,7 +13,7 @@
 @font-face {
   font-family: "GothamBook";
   src: local("Gotham"), url("./assets/fonts/Gotham-Font/GothamMedium.ttf") format("truetype");
-  /* font-weight: bold; */
+  font-weight: light;
 }
 
 @font-face {
