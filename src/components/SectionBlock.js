@@ -3,6 +3,7 @@ import Button from "./Button";
 import { useCustomWidth } from "../utils/useCustomWidth";
 import Footer from "./Footer";
 import { sectionDescription } from "../utils/constants";
+// import { useInView } from "react-intersection-observer";
 
 const SectionBlock = () => {
   const [width] = useCustomWidth();
