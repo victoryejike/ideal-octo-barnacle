@@ -1,20 +1,16 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./components/Header";
-import SectionBlock from "./components/SectionBlock";
-// import Footer from "./components/Footer";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Auth from "./pages/Auth";
 
 function App() {
-  const [isMenuOpen, setisMenuOpen] = useState(false);
-
   return (
     <Router>
       <div className="relative">
-        <Header isMenuOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} />
-        <div className="snap-y snap-mandatory overflow-auto h-screen">
-          <SectionBlock />
-        </div>
-        {/* <Footer /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/teslaaccount" element={<Auth />} />
+        </Routes>
       </div>
     </Router>
   );
