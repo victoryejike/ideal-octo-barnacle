@@ -28,7 +28,7 @@ const Tooltip = () => {
             popoverShow ? closePopover() : openPopover();
           }}
           ref={btnRef}>
-          <GrTooltip />
+          <GrTooltip className="-mx-4 w-2 mt-1" />
         </button>
         <div
           className={

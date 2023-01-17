@@ -32,10 +32,10 @@ const Auth = () => {
         <h2 className="text-[34px] font-normal  pb-2">Sign In</h2>
         <form>
           <div className="pt-6 pb-4">
-            <label className="block text-sm text-[#969393]">Email</label>
-            <span>
+            <div className="flex justify-start items-center">
+              <label className="text-sm text-[#969393]">Email</label>
               <Tooltip />
-            </span>
+            </div>
             <input
               type="email"
               value={email}
