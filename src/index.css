@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/gotham-ssm");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,5 +31,5 @@
 
 body {
   margin: 0;
-  /* font-family: "Gotham", sans-serif; */
+  font-family: "Gotham SSm", sans-serif;
 }

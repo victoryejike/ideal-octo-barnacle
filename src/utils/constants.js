@@ -1,3 +1,6 @@
+export const logoLink =
+  "https://assets.website-files.com/5e8fceb1c9af5c3915ec97a0/5ec2f037975ed372da9f6286_Tesla-Logo-PNG-HD.png";
+
 export const sectionDescription = [
   {
     title: "Model Y",
