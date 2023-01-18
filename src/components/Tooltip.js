@@ -16,7 +16,7 @@ const Tooltip = () => {
     setPopoverShow(false);
   };
 
-  const color = "green";
+  // const color = "green";
 
   return (
     <div className="flex flex-wrap">
@@ -34,24 +34,13 @@ const Tooltip = () => {
           <GrTooltip className="w-2" />
         </button>
         <div
-          className={
-            (popoverShow ? "" : "hidden ") +
-            "bg-" +
-            color +
-            "-600 border-0 mt-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
-          }
+          className={`${popoverShow ? "" : "hidden"} 
+            bg-white shadow-md w-full border-0 mt-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg`}
           ref={popoverRef}>
           <div>
-            <div
-              className={
-                "bg-" +
-                color +
-                "-600 text-white opacity-75 font-semibold p-3 mb-0 border-b border-solid border-slate-100 uppercase rounded-t-lg"
-              }>
-              {color} popover title
-            </div>
-            <div className="text-white p-3">
-              And here&apos;s some amazing content. It&apos;s very engaging. Right?
+            <div className="text-gray-600 p-3">
+              If your account is linked to an email address that you are no longer using log in and
+              change it
             </div>
           </div>
         </div>
