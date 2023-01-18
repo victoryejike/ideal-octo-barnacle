@@ -33,7 +33,7 @@ const Auth = () => {
         <form>
           <div className="pt-6 pb-4">
             <div className="flex justify-start items-center">
-              <label className="text-sm text-[#969393]">Email</label>
+              <label className="text-sm text-[#969393] mr-1">Email</label>
               <Tooltip />
             </div>
             <input

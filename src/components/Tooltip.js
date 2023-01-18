@@ -22,13 +22,13 @@ const Tooltip = () => {
     <div className="flex flex-wrap">
       <div className="w-full text-center">
         <button
-          className={`text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150`}
+          className={`text-white font-bold uppercase text-sm py-3 rounded  ease-linear transition-all duration-150`}
           type="button"
           onClick={() => {
             popoverShow ? closePopover() : openPopover();
           }}
           ref={btnRef}>
-          <GrTooltip className="-mx-4 w-2 mt-1" />
+          <GrTooltip className="w-2" />
         </button>
         <div
           className={
