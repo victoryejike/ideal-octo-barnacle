@@ -64,7 +64,7 @@ const Auth = () => {
             <button
               type="submit"
               className={`${
-                email === "" ? "bg-[#9CB5F1]" : "bg-[#3E6AE1]"
+                email === "" ? "bg-[#9CB5F1] cursor-not-allowed" : "bg-[#3E6AE1] cursor-pointer"
               } text-white rounded w-full py-[9px] text-sm`}>
               Next
             </button>

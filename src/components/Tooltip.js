@@ -24,8 +24,11 @@ const Tooltip = () => {
         <button
           className={`text-white font-bold uppercase text-sm py-3 rounded  ease-linear transition-all duration-150`}
           type="button"
-          onClick={() => {
-            popoverShow ? closePopover() : openPopover();
+          onMouseEnter={() => {
+            openPopover();
+          }}
+          onMouseLeave={() => {
+            closePopover();
           }}
           ref={btnRef}>
           <GrTooltip className="w-2" />
