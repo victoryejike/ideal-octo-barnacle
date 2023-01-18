@@ -17,7 +17,15 @@ const Auth = () => {
     setPassword(e.target.value);
   };
 
-  console.log(password);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const emailValidator = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (email.match(emailValidator)) {
+      alert("good to go!");
+    } else alert("please enter a valid email");
+  };
+
+  console.log(password, email);
 
   return (
     <section className="">
@@ -28,9 +36,9 @@ const Auth = () => {
         </div>
       </header>
 
-      <div className="w-[17%] mx-auto pt-5">
-        <h2 className="text-[34px] font-normal  pb-2">Sign In</h2>
-        <form>
+      <div className="w-3/4 lg:w-3/12 2xl:w-[17%] mx-auto pt-5">
+        <h2 className="text-left text-[34px] font-normal  pb-2">Sign In</h2>
+        <form onSubmit={handleSubmit}>
           <div className="pt-6 pb-4">
             <div className="flex justify-start items-center">
               <label className="text-sm text-[#969393] mr-1">Email</label>
@@ -55,7 +63,9 @@ const Auth = () => {
           <div className="my-4">
             <button
               type="submit"
-              className="bg-[#3E6AE1] text-white rounded w-full py-[9px] text-sm">
+              className={`${
+                email === "" ? "bg-[#9CB5F1]" : "bg-[#3E6AE1]"
+              } text-white rounded w-full py-[9px] text-sm`}>
               Next
             </button>
           </div>
