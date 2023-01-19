@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { logoLink } from "../utils/constants";
 import { MdLanguage } from "react-icons/md";
 import Tooltip from "../components/Tooltip";
+import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 // bg-[#9CB5F1]
 
@@ -28,9 +30,11 @@ const Auth = () => {
   console.log(password, email);
 
   return (
-    <section className="">
+    <section className="flex flex-col h-screen">
       <header className="flex justify-between items-center p-4 pl-7">
-        <img className=" object-contain w-32 " src={logoLink} alt="tesla" />
+        <Link to="/">
+          <img className=" object-contain w-32 " src={logoLink} alt="tesla" />
+        </Link>
         <div className="flex items-center">
           <MdLanguage className="w-7 h-7" /> <p className="text-sm">en-US</p>
         </div>
@@ -83,6 +87,9 @@ const Auth = () => {
             </button>
           </div>
         </form>
+      </div>
+      <div className="mt-auto pb-2">
+        <Footer />
       </div>
     </section>
   );
