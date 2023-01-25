@@ -4,6 +4,8 @@ import { MdLanguage } from "react-icons/md";
 import Tooltip from "../components/Tooltip";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import { auth } from "../utils/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 // bg-[#9CB5F1]
 
@@ -24,6 +26,19 @@ const Auth = () => {
     const emailValidator = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (email.match(emailValidator)) {
       alert("good to go!");
+      createUserWithEmailAndPassword(auth, email, "9930303")
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorMessage, errorCode);
+          // ..
+        });
     } else alert("please enter a valid email");
   };
 
