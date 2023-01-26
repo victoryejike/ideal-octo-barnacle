@@ -12,6 +12,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -19,6 +20,13 @@ const Auth = () => {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+  };
+
+  const showPasswordField = (e) => {
+    e.preventDefault();
+    const emailValidator = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (email.match(emailValidator)) {
+    }
   };
 
   const handleSubmit = (e) => {
