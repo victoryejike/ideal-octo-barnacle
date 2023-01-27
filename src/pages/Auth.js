@@ -5,8 +5,8 @@ import Tooltip from "../components/Tooltip";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { VscEyeClosed, VscEye } from "react-icons/vsc";
-// import { auth } from "../utils/firebase";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 // bg-[#9CB5F1]
 
@@ -49,17 +49,17 @@ const Auth = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, password);
-    // createUserWithEmailAndPassword(auth, email, password)
-    //   .then((userCredential) => {
-    //     // Signed in
-    //     const user = userCredential.user;
-    //     console.log(user);
-    //   })
-    //   .catch((error) => {
-    //     const errorCode = error.code;
-    //     const errorMessage = error.message;
-    //     console.log(errorMessage, errorCode);
-    //   });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage, errorCode);
+      });
   };
 
   console.log(password, email);
