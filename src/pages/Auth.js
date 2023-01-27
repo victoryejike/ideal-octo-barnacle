@@ -26,28 +26,29 @@ const Auth = () => {
     e.preventDefault();
     const emailValidator = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (email.match(emailValidator)) {
-    }
+      setShowPassword(true);
+    } else alert("Please enter a valid email");
+  };
+
+  const changeEmailValue = (e) => {
+    e.preventDefault();
+    setShowPassword(false);
+    setEmail("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const emailValidator = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (email.match(emailValidator)) {
-      alert("good to go!");
-      createUserWithEmailAndPassword(auth, email, "9930303")
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          console.log(user);
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorMessage, errorCode);
-          // ..
-        });
-    } else alert("please enter a valid email");
+    createUserWithEmailAndPassword(auth, email, "9930303")
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage, errorCode);
+      });
   };
 
   console.log(password, email);
@@ -67,18 +68,31 @@ const Auth = () => {
         <h2 className="text-left text-[34px] font-normal  pb-2">Sign In</h2>
         <form onSubmit={handleSubmit}>
           <div className="pt-6 pb-4">
-            <div className="flex justify-start items-center">
-              <label className="text-sm text-[#969393] mr-1">Email</label>
-              <Tooltip />
-            </div>
-            <input
-              type="email"
-              value={email}
-              onChange={handleEmailChange}
-              className="bg-[#F4F4F4] mt-2 text-sm p-[6px] text-black w-full outline-none rounded border border-transparent focus:border focus:border-gray-300 transition-all"
-            />
+            {showPassword ? (
+              <div className="flex justify-between items-center">
+                <p>{email}</p>
+                <p
+                  className="underline text-sm cursor-pointer underline-offset-4"
+                  onClick={changeEmailValue}>
+                  Change
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="flex justify-start items-center">
+                  <label className="text-sm text-[#969393] mr-1">Email</label>
+                  <Tooltip />
+                </div>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  className="bg-[#F4F4F4] mt-2 text-sm p-[6px] text-black w-full outline-none rounded border border-transparent focus:border focus:border-gray-300 transition-all"
+                />
+              </div>
+            )}
           </div>
-          <div className="pt-6 pb-4 hidden">
+          <div className={`pt-6 pb-4 ${showPassword ? "block" : "hidden"}`}>
             <label className="block text-sm text-[#969393]">Password</label>
             <input
               type="password"
@@ -88,17 +102,39 @@ const Auth = () => {
             />
           </div>
           <div className="my-4">
-            <button
-              type="submit"
-              className={`${
-                email === "" ? "bg-[#9CB5F1] cursor-not-allowed" : "bg-[#3E6AE1] cursor-pointer"
-              } text-white rounded w-full py-[9px] text-sm`}>
-              Next
-            </button>
+            {showPassword ? (
+              <div>
+                <button
+                  type="submit"
+                  className={`${
+                    password === ""
+                      ? "bg-[#9CB5F1] cursor-not-allowed"
+                      : "bg-[#3E6AE1] cursor-pointer"
+                  } text-white rounded w-full py-[9px] text-sm`}>
+                  Sign In
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={showPasswordField}
+                className={`${
+                  email === "" ? "bg-[#9CB5F1] cursor-not-allowed" : "bg-[#3E6AE1] cursor-pointer"
+                } text-white rounded w-full py-[9px] text-sm`}>
+                Next
+              </button>
+            )}
           </div>
-          <span className="underline underline-offset-[6px] my-7 text-sm flex justify-center items-center cursor-pointer">
-            Trouble Signing in?
-          </span>
+          {showPassword ? (
+            <span className="underline underline-offset-[6px] my-7 text-sm flex justify-center items-center cursor-pointer">
+              Forgot Password?
+            </span>
+          ) : (
+            <span className="underline underline-offset-[6px] my-7 text-sm flex justify-center items-center cursor-pointer">
+              Trouble Signing in?
+            </span>
+          )}
+
           <div className="flex justify-center items-center pt-0">
             <span className=" inline-block w-32 h-0 border"></span>
             <p className="mx-2 text-slate-300">Or</p>
