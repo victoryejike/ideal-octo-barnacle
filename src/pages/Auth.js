@@ -4,15 +4,17 @@ import { MdLanguage } from "react-icons/md";
 import Tooltip from "../components/Tooltip";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import { auth } from "../utils/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { VscEyeClosed, VscEye } from "react-icons/vsc";
+// import { auth } from "../utils/firebase";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
 
 // bg-[#9CB5F1]
 
 const Auth = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(null);
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [inputType, setInputType] = useState("password");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -30,6 +32,14 @@ const Auth = () => {
     } else alert("Please enter a valid email");
   };
 
+  const changeInputType = () => {
+    if (inputType === "password") {
+      setInputType("text");
+      return;
+    }
+    setInputType("password");
+  };
+
   const changeEmailValue = (e) => {
     e.preventDefault();
     setShowPassword(false);
@@ -38,17 +48,18 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, "9930303")
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage, errorCode);
-      });
+    console.log(email, password);
+    // createUserWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
+    //     // Signed in
+    //     const user = userCredential.user;
+    //     console.log(user);
+    //   })
+    //   .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     console.log(errorMessage, errorCode);
+    //   });
   };
 
   console.log(password, email);
@@ -92,14 +103,17 @@ const Auth = () => {
               </div>
             )}
           </div>
-          <div className={`pt-6 pb-4 ${showPassword ? "block" : "hidden"}`}>
+          <div className={`pt-1 pb-4 relative ${showPassword ? "block" : "hidden"}`}>
             <label className="block text-sm text-[#969393]">Password</label>
             <input
-              type="password"
-              value={email}
+              type={inputType}
+              value={password}
               onChange={handlePasswordChange}
-              className="bg-[#F4F4F4] mt-2 text-sm p-[6px] text-black w-full outline-none rounded border border-transparent focus:border focus:border-gray-300 transition-all"
+              className="bg-[#F4F4F4] relative mt-2 text-sm p-[6px] text-black w-full outline-none rounded border border-transparent focus:border focus:border-gray-300 transition-all"
             />
+            <span className="absolute top-11 right-3 cursor-pointer" onClick={changeInputType}>
+              {inputType === "password" ? <VscEye /> : <VscEyeClosed />}
+            </span>
           </div>
           <div className="my-4">
             {showPassword ? (
