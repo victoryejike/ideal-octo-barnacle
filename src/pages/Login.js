@@ -10,7 +10,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 
 // bg-[#9CB5F1]
 
-const Auth = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -155,9 +155,11 @@ const Auth = () => {
             <span className=" inline-block w-32 h-0 border"></span>
           </div>
           <div className="my-10">
-            <button className=" text-[#393C41] bg-[#F4F4F4] rounded w-full py-2 text-sm">
-              Create Account
-            </button>
+            <Link to="/signup">
+              <button className=" text-[#393C41] bg-[#F4F4F4] rounded w-full py-2 text-sm">
+                Create Account
+              </button>
+            </Link>
           </div>
         </form>
       </div>
@@ -168,4 +170,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default Login;
