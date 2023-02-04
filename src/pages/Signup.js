@@ -28,21 +28,9 @@ const Signup = () => {
   //   }
   // }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(email, password);
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //       console.log(user);
-  //     })
-  //     .catch((error) => {
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       console.log(errorMessage, errorCode);
-  //     });
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <section className="flex flex-col h-screen">
       <header className="flex justify-between items-center p-4 pl-7">
@@ -56,7 +44,7 @@ const Signup = () => {
 
       <div className="w-3/4 lg:w-3/12 2xl:w-[17%] mx-auto pt-5">
         <h2 className="text-left text-[34px] font-normal  pb-2">Sign In</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="pt-6 pb-4">
             <div>
               <div className="flex justify-start items-center">
