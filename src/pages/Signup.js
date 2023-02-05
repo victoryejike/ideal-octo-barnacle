@@ -81,6 +81,7 @@ const Signup = () => {
               Next
             </button>
           </div>
+          <div></div>
         </form>
       </div>
       <div className="mt-auto pb-2">
