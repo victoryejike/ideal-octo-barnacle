@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { logoLink } from "../utils/constants";
 import { MdLanguage } from "react-icons/md";
 // import { auth } from "../utils/firebase";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Signup = () => {
   const [fname, setFname] = useState("");
