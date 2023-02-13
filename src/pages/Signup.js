@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { logoLink } from "../utils/constants";
 import { MdLanguage } from "react-icons/md";
-// import { auth } from "../utils/firebase";
+import { auth } from "../utils/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Signup = () => {
@@ -30,6 +30,17 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    createUserWithEmailAndPassword(auth)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage, errorCode);
+      });
   };
   return (
     <section className="flex flex-col h-screen">
