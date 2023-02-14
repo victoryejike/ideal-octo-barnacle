@@ -33,3 +33,55 @@ body {
   margin: 0;
   font-family: "Gotham SSm", sans-serif;
 }
+
+/* 
+Here is an example of a PRD for a hypothetical project:
+
+Product Requirements Document
+
+Project Name: XYZ App
+
+Project Purpose: The XYZ App is a mobile application that allows users to create and share shopping lists with their friends and family. The app aims to simplify the shopping experience and make it more social.
+
+User Persona: Busy young adults who frequently shop for groceries and household items.
+
+Key Features:
+
+User account creation and authentication
+Ability to create and manage multiple shopping lists
+Integration with popular retailers to provide product and pricing information
+Real-time syncing of shopping lists with friends and family
+In-app messaging to communicate with list collaborators
+Ability to share shopping lists via social media and email
+Smart suggestions for products based on user history and preferences
+Personalized product recommendations based on current list contents
+User Experience: The XYZ App will have a simple and intuitive user interface that allows users to quickly create and manage shopping lists. Users will be able to easily share their lists with others, track changes made by collaborators, and communicate with them in-app. The app will provide personalized recommendations to help users find the products they need.
+
+Use Cases:
+
+User creates a new shopping list and adds products.
+User invites a friend or family member to collaborate on a list.
+User receives a notification when a list is updated by a collaborator.
+User sends a shopping list to a friend via email or social media.
+User receives personalized recommendations for products based on their list contents.
+Technical Requirements:
+
+The app will be developed for iOS and Android platforms.
+The app will use a REST API to integrate with retailer databases.
+The app will use a real-time syncing mechanism to keep lists up to date.
+The app will use push notifications to notify users of changes made to their lists.
+The app will use machine learning algorithms to provide personalized recommendations.
+Success Metrics:
+
+User engagement: daily active users, average session length, number of shopping lists created and shared.
+User retention: percentage of users who return to the app within 30 days.
+User satisfaction: app store ratings and reviews, user surveys.
+Mockups:
+
+See attached mockups for visual representation of the app.
+
+Review and Iteration:
+
+The PRD will be reviewed by the development team, project stakeholders, and potential users. Feedback will be used to iterate on the PRD until a final version is agreed upon.
+
+*/
