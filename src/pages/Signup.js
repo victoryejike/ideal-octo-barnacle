@@ -20,13 +20,13 @@ const Signup = () => {
     setLname(e.target.value);
   };
 
-  // const showButton = () => {
-  //   if (fname !== '' || lname !== '') {
-  //     setShowSubmitButton(true);
-  //   } else {
-  //     showSubmitButton(false);
-  //   }
-  // }
+  const showButton = () => {
+    if (fname !== "" || lname !== "") {
+      setShowSubmitButton(true);
+    } else {
+      showSubmitButton(false);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
